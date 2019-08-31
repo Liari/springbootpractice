@@ -18,6 +18,7 @@ public class TestMapperProxyFactoryBean implements FactoryBean<TestMapper> {
 
     @Override
     public TestMapper getObject() throws Exception {
+        //返回对象
         Class<?> interfaceType = TestMapper.class;
         InvocationHandler handler = new TestMapperInvocationHandler();
         TestMapper testMapper = (TestMapper) Proxy.newProxyInstance(interfaceType.getClassLoader(),
@@ -27,6 +28,8 @@ public class TestMapperProxyFactoryBean implements FactoryBean<TestMapper> {
 
     @Override
     public Class<?> getObjectType() {
+        //Bean的类型
         return TestMapper.class;
     }
+
 }
