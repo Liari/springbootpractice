@@ -11,16 +11,13 @@ import java.lang.reflect.Method;
  */
 public class TestMapperInvocationHandler implements InvocationHandler {
 
-
     public TestMapperInvocationHandler() {
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("~~~~~~~~~调用前，参数：" + args);
         if (args != null && args.length > 0) {
             Object object = args[0];
-            System.out.println("~~~~~~~~~调用后，结果：" + object);
             return object;
         }
         return null;
