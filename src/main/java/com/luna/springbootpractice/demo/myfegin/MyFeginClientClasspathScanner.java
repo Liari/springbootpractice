@@ -21,7 +21,7 @@ import java.util.Set;
  */
 public class MyFeginClientClasspathScanner extends ClassPathBeanDefinitionScanner {
 
-    private static final Logger log = LoggerFactory.getLogger(MyFeginClientClasspathScanner.class);
+    private static final Logger logger = LoggerFactory.getLogger(MyFeginClientClasspathScanner.class);
 
     private Class<? extends AbstractFactoryBean> factoryBeanImplClass;
 
@@ -33,7 +33,7 @@ public class MyFeginClientClasspathScanner extends ClassPathBeanDefinitionScanne
     public Set<BeanDefinitionHolder> doScan(String... basePackages) {
         //BeanDefinitionHolder 封装了BeanDefinition,beanName以及aliases
         Set<BeanDefinitionHolder> beanDefinitions = super.doScan(basePackages);
-        log.info("find beanDefinitions :" + beanDefinitions);
+        logger.info("find beanDefinitions :" + beanDefinitions);
         if (!beanDefinitions.isEmpty()) {
             for (BeanDefinitionHolder holder : beanDefinitions) {
                 GenericBeanDefinition defination = (GenericBeanDefinition) holder.getBeanDefinition();

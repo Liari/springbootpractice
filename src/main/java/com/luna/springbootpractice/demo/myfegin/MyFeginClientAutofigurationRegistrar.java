@@ -27,7 +27,7 @@ import java.io.IOException;
  */
 public class MyFeginClientAutofigurationRegistrar implements ImportBeanDefinitionRegistrar, ResourceLoaderAware, EnvironmentAware {
 
-    private static final Logger log = LoggerFactory.getLogger(MyFeginClientAutofigurationRegistrar.class);
+    private static final Logger logger = LoggerFactory.getLogger(MyFeginClientAutofigurationRegistrar.class);
 
     private Environment env;
     private ResourceLoader resourceLoader;
@@ -35,23 +35,23 @@ public class MyFeginClientAutofigurationRegistrar implements ImportBeanDefinitio
     @Override
     public void setEnvironment(Environment environment) {
         this.env = environment;
-        if (log.isDebugEnabled()) {
-            log.debug("setEnvironment");
+        if (logger.isDebugEnabled()) {
+            logger.debug("setEnvironment");
         }
     }
 
     @Override
     public void setResourceLoader(ResourceLoader resourceLoader) {
         this.resourceLoader = resourceLoader;
-        if (log.isDebugEnabled()) {
-            log.debug("setResourceLoader");
+        if (logger.isDebugEnabled()) {
+            logger.debug("setResourceLoader");
         }
     }
 
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
-        if (log.isDebugEnabled()) {
-            log.debug("registerBeanDefinitions");
+        if (logger.isDebugEnabled()) {
+            logger.debug("registerBeanDefinitions");
         }
 
         // 获取MyFeginClientScanner配置的basePackage
