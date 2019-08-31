@@ -42,10 +42,6 @@ public class AbstractMyFeginClientFactoryBean<T> implements FactoryBean<T>, Init
         return myFeginClientSupport;
     }
 
-    public void setMyFeginClientSupport(MyFeginClientSupport myFeginClientSupport) {
-        this.myFeginClientSupport = myFeginClientSupport;
-    }
-
     public T getT() {
         return t;
     }
